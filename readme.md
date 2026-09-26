@@ -157,6 +157,12 @@ Isso obterá um token que pode ser usado nas requisições que exigem autentica�
 
 Desenvolvido como exercício prático de testes de API com Cypress.
 
+## ✅ Evidência de execução
+
+Os 6 cenários de `exercicio.cy.js` passando no Cypress, cobrindo GET (com filtros e paginação, e por ID), POST (sucesso e rejeição de dados inválidos), PUT e DELETE — incluindo a validação de que as rotas protegidas exigem token de administrador:
+
+![Testes de API do Catálogo de Livros passando no Cypress](docs/evidencia-testes-api.jpg)
+
 ---
 
 **Boa sorte com os testes! 🚀**

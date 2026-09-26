@@ -52,3 +52,18 @@ Cypress.Commands.add('geraToken', (email, senha) => {
             return response.body.user.id
         })
  })
+
+// Cadastra um livro no catálogo e devolve o ID gerado.
+// Reaproveitado pelos testes de PUT e DELETE, que precisam de um livro
+// já existente para poder atualizar/remover.
+Cypress.Commands.add('cadastrarLivro', (token, livro) => {
+    cy.api({
+        method: 'POST',
+        url: 'books',
+        headers: { 'Authorization': token },
+        body: livro
+    }).then(response => {
+        expect(response.status).to.equal(201)
+        return response.body.book.id
+    })
+})
